@@ -240,6 +240,8 @@ typedef struct RMW_PUBLIC_TYPE rmw_subscriptions_t
   size_t subscriber_count;
   /// Pointer to an array of void * pointers of subscriptions.
   void ** subscribers;
+  /// Pointer to an array of void * pointers of ros2 subscriptions handlers.
+  void ** ros2_handles;
 } rmw_subscriptions_t;
 
 /// Array of service handles.
