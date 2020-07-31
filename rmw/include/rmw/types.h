@@ -274,6 +274,8 @@ typedef struct RMW_PUBLIC_TYPE rmw_clients_t
   size_t client_count;
   /// Pointer to an array of void * pointers of clients.
   void ** clients;
+  /// Pointer to an array of void * pointers of ros2 client handlers.
+  void ** ros2_handles;
 } rmw_clients_t;
 
 typedef struct RMW_PUBLIC_TYPE rmw_events_t
