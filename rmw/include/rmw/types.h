@@ -257,6 +257,8 @@ typedef struct RMW_PUBLIC_TYPE rmw_services_t
   size_t service_count;
   /// Pointer to an array of void * pointers of services.
   void ** services;
+  /// Pointer to an array of void * pointers of ros2 service handlers.
+  void ** ros2_handles;
 } rmw_services_t;
 
 /// Array of client handles.
