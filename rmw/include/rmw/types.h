@@ -240,8 +240,8 @@ typedef struct RMW_PUBLIC_TYPE rmw_subscriptions_t
   size_t subscriber_count;
   /// Pointer to an array of void * pointers of subscriptions.
   void ** subscribers;
-  /// Pointer to an array of void * pointers of ros2 subscriptions handlers.
-  void ** ros2_handles;
+  /// Pointer to an array of void * pointers of event_hooks.
+  void ** event_hooks;
 } rmw_subscriptions_t;
 
 /// Array of service handles.
@@ -257,8 +257,8 @@ typedef struct RMW_PUBLIC_TYPE rmw_services_t
   size_t service_count;
   /// Pointer to an array of void * pointers of services.
   void ** services;
-  /// Pointer to an array of void * pointers of ros2 service handlers.
-  void ** ros2_handles;
+  /// Pointer to an array of void * pointers of event_hooks
+  void ** event_hooks;
 } rmw_services_t;
 
 /// Array of client handles.
@@ -274,8 +274,8 @@ typedef struct RMW_PUBLIC_TYPE rmw_clients_t
   size_t client_count;
   /// Pointer to an array of void * pointers of clients.
   void ** clients;
-  /// Pointer to an array of void * pointers of ros2 client handlers.
-  void ** ros2_handles;
+  /// Pointer to an array of void * pointers of event_hooks.
+  void ** event_hooks;
 } rmw_clients_t;
 
 typedef struct RMW_PUBLIC_TYPE rmw_events_t
