@@ -1100,6 +1100,14 @@ rmw_wait(
   rmw_wait_set_t * wait_set,
   const rmw_time_t * wait_timeout);
 
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_attach_event_hook(
+  rmw_subscriptions_t * subscriptions,
+  rmw_services_t * services,
+  rmw_clients_t * clients);
+
 /// Return a list of node name and namespaces discovered via a node.
 /**
  * This function will return a list of node names and a list of node namespaces
