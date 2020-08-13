@@ -1103,10 +1103,13 @@ rmw_wait(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_attach_event_hook(
+rmw_init_waitset(
   rmw_subscriptions_t * subscriptions,
+  rmw_guard_conditions_t * guard_conditions,
   rmw_services_t * services,
-  rmw_clients_t * clients);
+  rmw_clients_t * clients,
+  rmw_events_t * events,
+  rmw_wait_set_t * wait_set);
 
 /// Return a list of node name and namespaces discovered via a node.
 /**
