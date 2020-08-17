@@ -299,6 +299,8 @@ typedef struct RMW_PUBLIC_TYPE rmw_guard_conditions_t
   size_t guard_condition_count;
   /// Pointer to an array of void * pointers of guard conditions.
   void ** guard_conditions;
+  /// Pointer to an array of void * pointers of event_hooks
+  void ** event_hooks;
 } rmw_guard_conditions_t;
 
 /// Container for guard conditions to be waited on
