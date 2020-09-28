@@ -90,6 +90,7 @@ extern "C"
 
 #include "rcutils/macros.h"
 #include "rcutils/types.h"
+#include "rcutils/event_types.h"
 
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_runtime_c/service_type_support_struct.h"
@@ -1099,6 +1100,17 @@ rmw_wait(
   rmw_events_t * events,
   rmw_wait_set_t * wait_set,
   const rmw_time_t * wait_timeout);
+
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_set_subscription_hook(
+  void * executor_context,
+  Event_callback callback,
+  void * subscription_handle,
+  void * rmw_subscription
+);
+
 
 RMW_PUBLIC
 RMW_WARN_UNUSED
