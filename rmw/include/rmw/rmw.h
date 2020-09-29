@@ -1104,7 +1104,7 @@ rmw_wait(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_set_subscription_hook(
+rmw_set_subscription_callback(
   void * executor_context,
   Event_callback callback,
   void * subscription_handle,
