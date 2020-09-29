@@ -1111,6 +1111,15 @@ rmw_set_subscription_callback(
   void * rmw_subscription
 );
 
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_set_service_callback(
+  void * executor_context,
+  Event_callback callback,
+  void * service_handle,
+  void * rmw_service
+);
 
 RMW_PUBLIC
 RMW_WARN_UNUSED
