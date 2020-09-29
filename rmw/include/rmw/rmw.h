@@ -1124,6 +1124,16 @@ rmw_set_service_callback(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
+rmw_set_client_callback(
+  void * executor_context,
+  Event_callback callback,
+  void * client_handle,
+  void * rmw_client
+);
+
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
 rmw_init_waitset(
   rmw_subscriptions_t * subscriptions,
   rmw_guard_conditions_t * guard_conditions,
