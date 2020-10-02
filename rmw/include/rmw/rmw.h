@@ -90,6 +90,7 @@ extern "C"
 
 #include "rcutils/macros.h"
 #include "rcutils/types.h"
+#include "rcutils/event_types.h"
 
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_runtime_c/service_type_support_struct.h"
@@ -2545,6 +2546,50 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_set_log_severity(rmw_log_severity_t severity);
+
+/// Add documentation
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_set_subscription_callback(
+  void * executor_context,
+  Event_callback executor_callback,
+  void * subscription_handle,
+  void * rmw_subscription
+);
+
+/// Add documentation
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_set_service_callback(
+  void * executor_context,
+  Event_callback executor_callback,
+  void * service_handle,
+  void * rmw_service
+);
+
+/// Add documentation
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_set_client_callback(
+  void * executor_context,
+  Event_callback executor_callback,
+  void * client_handle,
+  void * rmw_client
+);
+
+/// Add documentation
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_set_guard_condition_callback(
+  void * executor_context,
+  Event_callback executor_callback,
+  void * guard_condition_handle,
+  void * rmw_guard_condition
+);
 
 #ifdef __cplusplus
 }
