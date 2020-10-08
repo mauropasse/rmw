@@ -2555,8 +2555,7 @@ rmw_set_subscription_callback(
   const void * executor_context,
   Event_callback executor_callback,
   const void * subscription_handle,
-  void * rmw_subscription
-);
+  void * rmw_subscription);
 
 /// Add documentation
 RMW_PUBLIC
@@ -2566,8 +2565,7 @@ rmw_set_service_callback(
   const void * executor_context,
   Event_callback executor_callback,
   const void * service_handle,
-  void * rmw_service
-);
+  void * rmw_service);
 
 /// Add documentation
 RMW_PUBLIC
@@ -2577,8 +2575,7 @@ rmw_set_client_callback(
   const void * executor_context,
   Event_callback executor_callback,
   const void * client_handle,
-  void * rmw_client
-);
+  void * rmw_client);
 
 /// Add documentation
 RMW_PUBLIC
@@ -2589,8 +2586,7 @@ rmw_set_guard_condition_callback(
   Event_callback executor_callback,
   const void * guard_condition_handle,
   void * rmw_guard_condition,
-  bool use_previous_events
-);
+  bool use_previous_events);
 
 #ifdef __cplusplus
 }
