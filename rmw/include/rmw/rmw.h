@@ -90,7 +90,7 @@ extern "C"
 
 #include "rcutils/macros.h"
 #include "rcutils/types.h"
-#include "rcutils/event_types.h"
+#include "rcutils/executor_event_types.h"
 
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_runtime_c/service_type_support_struct.h"
@@ -2792,9 +2792,9 @@ rmw_set_log_severity(rmw_log_severity_t severity);
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_set_subscription_callback(
+rmw_subscription_set_events_executor_callback(
   const void * executor_context,
-  Event_callback executor_callback,
+  ExecutorEventCallback executor_callback,
   const void * subscription_handle,
   void * rmw_subscription);
 
@@ -2802,9 +2802,9 @@ rmw_set_subscription_callback(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_set_service_callback(
+rmw_service_set_events_executor_callback(
   const void * executor_context,
-  Event_callback executor_callback,
+  ExecutorEventCallback executor_callback,
   const void * service_handle,
   void * rmw_service);
 
@@ -2812,9 +2812,9 @@ rmw_set_service_callback(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_set_client_callback(
+rmw_client_set_events_executor_callback(
   const void * executor_context,
-  Event_callback executor_callback,
+  ExecutorEventCallback executor_callback,
   const void * client_handle,
   void * rmw_client);
 
@@ -2824,7 +2824,7 @@ RMW_WARN_UNUSED
 rmw_ret_t
 rmw_set_guard_condition_callback(
   const void * executor_context,
-  Event_callback executor_callback,
+  ExecutorEventCallback executor_callback,
   const void * guard_condition_handle,
   void * rmw_guard_condition,
   bool use_previous_events);
