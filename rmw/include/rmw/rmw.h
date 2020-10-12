@@ -2822,7 +2822,7 @@ rmw_client_set_events_executor_callback(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_set_guard_condition_callback(
+rmw_guard_condition_set_events_executor_callback(
   const void * executor_context,
   ExecutorEventCallback executor_callback,
   const void * guard_condition_handle,
