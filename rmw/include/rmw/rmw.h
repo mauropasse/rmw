@@ -2829,6 +2829,17 @@ rmw_guard_condition_set_events_executor_callback(
   void * rmw_guard_condition,
   bool use_previous_events);
 
+/// Add documentation
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_event_set_events_executor_callback(
+  const void * executor_context,
+  ExecutorEventCallback executor_callback,
+  const void * event_handle,
+  void * rmw_event,
+  bool use_previous_events);
+
 #ifdef __cplusplus
 }
 #endif
