@@ -2790,8 +2790,7 @@ rmw_set_log_severity(rmw_log_severity_t severity);
 
 /// Add documentation
 RMW_PUBLIC
-RMW_WARN_UNUSED
-rmw_ret_t
+void
 rmw_subscription_set_events_executor_callback(
   const void * executor_context,
   ExecutorEventCallback executor_callback,
@@ -2800,8 +2799,7 @@ rmw_subscription_set_events_executor_callback(
 
 /// Add documentation
 RMW_PUBLIC
-RMW_WARN_UNUSED
-rmw_ret_t
+void
 rmw_service_set_events_executor_callback(
   const void * executor_context,
   ExecutorEventCallback executor_callback,
@@ -2810,8 +2808,7 @@ rmw_service_set_events_executor_callback(
 
 /// Add documentation
 RMW_PUBLIC
-RMW_WARN_UNUSED
-rmw_ret_t
+void
 rmw_client_set_events_executor_callback(
   const void * executor_context,
   ExecutorEventCallback executor_callback,
@@ -2820,8 +2817,7 @@ rmw_client_set_events_executor_callback(
 
 /// Add documentation
 RMW_PUBLIC
-RMW_WARN_UNUSED
-rmw_ret_t
+void
 rmw_guard_condition_set_events_executor_callback(
   const void * executor_context,
   ExecutorEventCallback executor_callback,
@@ -2831,8 +2827,7 @@ rmw_guard_condition_set_events_executor_callback(
 
 /// Add documentation
 RMW_PUBLIC
-RMW_WARN_UNUSED
-rmw_ret_t
+void
 rmw_event_set_events_executor_callback(
   const void * executor_context,
   ExecutorEventCallback executor_callback,
