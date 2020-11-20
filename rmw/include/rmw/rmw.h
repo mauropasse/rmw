@@ -90,12 +90,12 @@ extern "C"
 
 #include "rcutils/macros.h"
 #include "rcutils/types.h"
-#include "rcutils/executor_event_types.h"
 
 #include "rosidl_runtime_c/message_type_support_struct.h"
 #include "rosidl_runtime_c/service_type_support_struct.h"
 #include "rosidl_runtime_c/sequence_bound.h"
 
+#include "rmw/executor_event_types.h"
 #include "rmw/init.h"
 #include "rmw/macros.h"
 #include "rmw/qos_profiles.h"
