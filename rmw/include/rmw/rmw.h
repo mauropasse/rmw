@@ -2788,7 +2788,18 @@ RMW_WARN_UNUSED
 rmw_ret_t
 rmw_set_log_severity(rmw_log_severity_t severity);
 
-/// Add documentation
+/// Set callback function of the rmw subscription listener.
+/**
+ * This function sets the callback function which will be called whenever the
+ * subscription listener is notified about a new message for the subscription.
+ *
+ * \param[in] callback_context Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] subscription_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_subscription The rmw subscription to which the listener belongs
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
@@ -2798,7 +2809,18 @@ rmw_subscription_set_listener_callback(
   const void * subscription_handle,
   rmw_subscription_t * rmw_subscription);
 
-/// Add documentation
+/// Set callback function of the rmw service listener.
+/**
+ * This function sets the callback function which will be called whenever the
+ * service listener is notified about a service ready.
+ *
+ * \param[in] callback_context Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] service_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_service The rmw service to which the listener belongs
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
@@ -2808,7 +2830,18 @@ rmw_service_set_listener_callback(
   const void * service_handle,
   rmw_service_t * rmw_service);
 
-/// Add documentation
+/// Set callback function of the rmw client listener.
+/**
+ * This function sets the callback function which will be called whenever the
+ * client listener is notified about a new client request.
+ *
+ * \param[in] callback_context Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] client_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_client The rmw client to which the listener belongs
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
@@ -2818,7 +2851,20 @@ rmw_client_set_listener_callback(
   const void * client_handle,
   rmw_client_t * rmw_client);
 
-/// Add documentation
+/// Set callback function of the rmw guard condition listener.
+/**
+ * This function sets the callback function which will be called whenever the
+ * guard condition listener is notified about the guard condition being triggered.
+ *
+ * \param[in] callback_context Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] guard_condition_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_guard_condition The rmw guard condition to which the listener belongs
+ * \param[in] use_previous_events Boolean flag to indicate if events happened before the
+ *   set of the listener callback should be taken into account or ignored
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
@@ -2829,7 +2875,20 @@ rmw_guard_condition_set_listener_callback(
   rmw_guard_condition_t * rmw_guard_condition,
   bool use_previous_events);
 
-/// Add documentation
+/// Set callback function of the rmw event listener.
+/**
+ * This function sets the callback function which will be called whenever the
+ * subscription listener is notified about a new message for the subscription.
+ *
+ * \param[in] callback_context Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] event_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_event The rmw event to which the listener belongs
+ * \param[in] use_previous_events Boolean flag to indicate if events happened before the
+ *   set of the listener callback should be taken into account or ignored
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
