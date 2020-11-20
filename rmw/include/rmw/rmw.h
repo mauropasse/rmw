@@ -2796,7 +2796,7 @@ rmw_set_log_severity(rmw_log_severity_t severity);
  * \param[in] callback_context Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
  * \param[in] subscription_handle Used as arg for the call of the listener_callback
- * \param[in] rmw_subscription Handle to the subscription listener to set the callback
+ * \param[in] rmw_subscription The rmw subscription to which the listener belongs
  * \return `RMW_RET_OK` if callback was set to the listener, or
  * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
  */
@@ -2817,7 +2817,7 @@ rmw_subscription_set_listener_callback(
  * \param[in] callback_context Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
  * \param[in] service_handle Used as arg for the call of the listener_callback
- * \param[in] rmw_service Handle to the service listener to set the callback
+ * \param[in] rmw_service The rmw service to which the listener belongs
  * \return `RMW_RET_OK` if callback was set to the listener, or
  * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
  */
@@ -2838,7 +2838,7 @@ rmw_service_set_listener_callback(
  * \param[in] callback_context Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
  * \param[in] client_handle Used as arg for the call of the listener_callback
- * \param[in] rmw_client Handle to the client listener to set the callback
+ * \param[in] rmw_client The rmw client to which the listener belongs
  * \return `RMW_RET_OK` if callback was set to the listener, or
  * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
  */
@@ -2859,7 +2859,7 @@ rmw_client_set_listener_callback(
  * \param[in] callback_context Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
  * \param[in] guard_condition_handle Used as arg for the call of the listener_callback
- * \param[in] rmw_guard_condition Handle to the guard condition listener to set the callback
+ * \param[in] rmw_guard_condition The rmw guard condition to which the listener belongs
  * \param[in] use_previous_events Boolean flag to indicate if events happened before the
  *   set of the listener callback should be taken into account or ignored
  * \return `RMW_RET_OK` if callback was set to the listener, or
@@ -2883,7 +2883,7 @@ rmw_guard_condition_set_listener_callback(
  * \param[in] callback_context Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
  * \param[in] event_handle Used as arg for the call of the listener_callback
- * \param[in] rmw_event Handle to the subscription listener to set the callback
+ * \param[in] rmw_event The rmw event to which the listener belongs
  * \param[in] use_previous_events Boolean flag to indicate if events happened before the
  *   set of the listener callback should be taken into account or ignored
  * \return `RMW_RET_OK` if callback was set to the listener, or
