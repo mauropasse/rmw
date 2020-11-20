@@ -2793,7 +2793,7 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_subscription_set_listener_callback(
-  const void * executor_context,
+  const void * callback_context,
   rmw_listener_cb_t listener_callback,
   const void * subscription_handle,
   rmw_subscription_t * rmw_subscription);
@@ -2803,7 +2803,7 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_service_set_listener_callback(
-  const void * executor_context,
+  const void * callback_context,
   rmw_listener_cb_t listener_callback,
   const void * service_handle,
   rmw_service_t * rmw_service);
@@ -2813,7 +2813,7 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_client_set_listener_callback(
-  const void * executor_context,
+  const void * callback_context,
   rmw_listener_cb_t listener_callback,
   const void * client_handle,
   rmw_client_t * rmw_client);
@@ -2823,7 +2823,7 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_guard_condition_set_listener_callback(
-  const void * executor_context,
+  const void * callback_context,
   rmw_listener_cb_t listener_callback,
   const void * guard_condition_handle,
   rmw_guard_condition_t * rmw_guard_condition,
@@ -2834,7 +2834,7 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_event_set_listener_callback(
-  const void * executor_context,
+  const void * callback_context,
   rmw_listener_cb_t listener_callback,
   const void * event_handle,
   rmw_event_t * rmw_event,
