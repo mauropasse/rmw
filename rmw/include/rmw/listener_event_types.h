@@ -12,35 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef RMW__EXECUTOR_EVENT_TYPES_H_
-#define RMW__EXECUTOR_EVENT_TYPES_H_
+#ifndef RMW__LISTENER_EVENT_TYPES_H_
+#define RMW__LISTENER_EVENT_TYPES_H_
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-enum ExecutorEventType {
+enum rmw_listener_event_type_t {
     SUBSCRIPTION_EVENT,
     SERVICE_EVENT,
     CLIENT_EVENT,
     WAITABLE_EVENT
 };
 
-typedef enum ExecutorEventType ExecutorEventType;
+typedef enum rmw_listener_event_type_t rmw_listener_event_type_t;
 
-struct ExecutorEvent {
+struct rmw_listener_event_t {
   const void * entity;
-  ExecutorEventType type;
+  rmw_listener_event_type_t type;
 };
 
-typedef struct ExecutorEvent ExecutorEvent;
+typedef struct rmw_listener_event_t rmw_listener_event_t;
 
-typedef void (*EventsExecutorCallback)(const void * context, ExecutorEvent event);
+typedef void (*rmw_listener_cb_t)(const void * callback_context, rmw_listener_event_t event);
 
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif  // RMW__EXECUTOR_EVENT_TYPES_H_
+#endif  // RMW__LISTENER_EVENT_TYPES_H_
