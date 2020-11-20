@@ -95,12 +95,12 @@ extern "C"
 #include "rosidl_runtime_c/service_type_support_struct.h"
 #include "rosidl_runtime_c/sequence_bound.h"
 
-#include "rmw/executor_event_types.h"
 #include "rmw/init.h"
+#include "rmw/listener_event_types.h"
 #include "rmw/macros.h"
+#include "rmw/message_sequence.h"
 #include "rmw/qos_profiles.h"
 #include "rmw/subscription_options.h"
-#include "rmw/message_sequence.h"
 #include "rmw/types.h"
 #include "rmw/visibility_control.h"
 
@@ -2792,9 +2792,9 @@ rmw_set_log_severity(rmw_log_severity_t severity);
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_subscription_set_events_executor_callback(
-  const void * executor_context,
-  EventsExecutorCallback executor_callback,
+rmw_subscription_set_listener_callback(
+  const void * callback_context,
+  rmw_listener_cb_t listener_callback,
   const void * subscription_handle,
   rmw_subscription_t * rmw_subscription);
 
@@ -2802,9 +2802,9 @@ rmw_subscription_set_events_executor_callback(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_service_set_events_executor_callback(
-  const void * executor_context,
-  EventsExecutorCallback executor_callback,
+rmw_service_set_listener_callback(
+  const void * callback_context,
+  rmw_listener_cb_t listener_callback,
   const void * service_handle,
   rmw_service_t * rmw_service);
 
@@ -2812,9 +2812,9 @@ rmw_service_set_events_executor_callback(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_client_set_events_executor_callback(
-  const void * executor_context,
-  EventsExecutorCallback executor_callback,
+rmw_client_set_listener_callback(
+  const void * callback_context,
+  rmw_listener_cb_t listener_callback,
   const void * client_handle,
   rmw_client_t * rmw_client);
 
@@ -2822,9 +2822,9 @@ rmw_client_set_events_executor_callback(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_guard_condition_set_events_executor_callback(
-  const void * executor_context,
-  EventsExecutorCallback executor_callback,
+rmw_guard_condition_set_listener_callback(
+  const void * callback_context,
+  rmw_listener_cb_t listener_callback,
   const void * guard_condition_handle,
   rmw_guard_condition_t * rmw_guard_condition,
   bool use_previous_events);
@@ -2833,9 +2833,9 @@ rmw_guard_condition_set_events_executor_callback(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_event_set_events_executor_callback(
-  const void * executor_context,
-  EventsExecutorCallback executor_callback,
+rmw_event_set_listener_callback(
+  const void * callback_context,
+  rmw_listener_cb_t listener_callback,
   const void * event_handle,
   rmw_event_t * rmw_event,
   bool use_previous_events);
