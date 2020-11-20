@@ -2796,7 +2796,7 @@ rmw_subscription_set_events_executor_callback(
   const void * executor_context,
   EventsExecutorCallback executor_callback,
   const void * subscription_handle,
-  void * rmw_subscription);
+  rmw_subscription_t * rmw_subscription);
 
 /// Add documentation
 RMW_PUBLIC
@@ -2806,7 +2806,7 @@ rmw_service_set_events_executor_callback(
   const void * executor_context,
   EventsExecutorCallback executor_callback,
   const void * service_handle,
-  void * rmw_service);
+  rmw_service_t * rmw_service);
 
 /// Add documentation
 RMW_PUBLIC
@@ -2816,7 +2816,7 @@ rmw_client_set_events_executor_callback(
   const void * executor_context,
   EventsExecutorCallback executor_callback,
   const void * client_handle,
-  void * rmw_client);
+  rmw_client_t * rmw_client);
 
 /// Add documentation
 RMW_PUBLIC
@@ -2826,7 +2826,7 @@ rmw_guard_condition_set_events_executor_callback(
   const void * executor_context,
   EventsExecutorCallback executor_callback,
   const void * guard_condition_handle,
-  void * rmw_guard_condition,
+  rmw_guard_condition_t * rmw_guard_condition,
   bool use_previous_events);
 
 /// Add documentation
@@ -2837,7 +2837,7 @@ rmw_event_set_events_executor_callback(
   const void * executor_context,
   EventsExecutorCallback executor_callback,
   const void * event_handle,
-  void * rmw_event,
+  rmw_event_t * rmw_event,
   bool use_previous_events);
 
 #ifdef __cplusplus
