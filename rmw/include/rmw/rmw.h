@@ -96,10 +96,11 @@ extern "C"
 #include "rosidl_runtime_c/sequence_bound.h"
 
 #include "rmw/init.h"
+#include "rmw/listener_event_types.h"
 #include "rmw/macros.h"
+#include "rmw/message_sequence.h"
 #include "rmw/qos_profiles.h"
 #include "rmw/subscription_options.h"
-#include "rmw/message_sequence.h"
 #include "rmw/types.h"
 #include "rmw/visibility_control.h"
 
@@ -2788,6 +2789,127 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_set_log_severity(rmw_log_severity_t severity);
+
+/// Set callback function of the rmw subscription listener.
+/**
+ * This API sets the callback function which will be called whenever the
+ * subscription listener is notified about a new message for the subscription.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
+ *
+ * \param[in] user_data Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] subscription_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_subscription The rmw subscription to which the listener belongs
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_subscription_set_listener_callback(
+  rmw_subscription_t * rmw_subscription,
+  rmw_listener_cb_t listener_callback,
+  const void * user_data,
+  const void * subscription_handle);
+
+/// Set callback function of the rmw service listener.
+/**
+ * This API sets the callback function which will be called whenever the
+ * service listener is notified about a service ready.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
+ *
+ * \param[in] user_data Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] service_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_service The rmw service to which the listener belongs
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_service_set_listener_callback(
+  rmw_service_t * rmw_service,
+  rmw_listener_cb_t listener_callback,
+  const void * user_data,
+  const void * service_handle);
+
+/// Set callback function of the rmw client listener.
+/**
+ * This API sets the callback function which will be called whenever the
+ * client listener is notified about a new client request.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
+ *
+ * \param[in] user_data Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] client_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_client The rmw client to which the listener belongs
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_client_set_listener_callback(
+  rmw_client_t * rmw_client,
+  rmw_listener_cb_t listener_callback,
+  const void * user_data,
+  const void * client_handle);
+
+/// Set callback function of the rmw guard condition listener.
+/**
+ * This API sets the callback function which will be called whenever the
+ * guard condition listener is notified about the guard condition being triggered.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
+ *
+ * \param[in] user_data Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] guard_condition_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_guard_condition The rmw guard condition to which the listener belongs
+ * \param[in] use_previous_events Boolean flag to indicate if events happened before the
+ *   set of the listener callback should be taken into account or ignored
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_guard_condition_set_listener_callback(
+  rmw_guard_condition_t * rmw_guard_condition,
+  rmw_listener_cb_t listener_callback,
+  const void * user_data,
+  const void * guard_condition_handle,
+  bool use_previous_events);
+
+/// Set callback function of the rmw event listener.
+/**
+ * This API sets the callback function which will be called whenever the
+ * event listener is notified about a new event, like a QoS change.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
+ *
+ * \param[in] user_data Used as arg for the call of the listener_callback
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] event_handle Used as arg for the call of the listener_callback
+ * \param[in] rmw_event The rmw event to which the listener belongs
+ * \param[in] use_previous_events Boolean flag to indicate if events happened before the
+ *   set of the listener callback should be taken into account or ignored
+ * \return `RMW_RET_OK` if callback was set to the listener, or
+ * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
+ */
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_event_set_listener_callback(
+  rmw_event_t * rmw_event,
+  rmw_listener_cb_t listener_callback,
+  const void * user_data,
+  const void * event_handle,
+  bool use_previous_events);
 
 #ifdef __cplusplus
 }
